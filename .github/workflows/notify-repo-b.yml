@@ -12,13 +12,7 @@ jobs:
         env:
           GITLAB_TRIGGER_TOKEN: ${{ secrets.GITLAB_TRIGGER_TOKEN }}
           GITLAB_PROJECT_ID: ${{ secrets.GITLAB_PROJECT_ID }}
-          DEPLOYED_URL: ${{ secrets.DEPLOYED_URL }}
         run: |
-          echo "Project ID length: ${#GITLAB_PROJECT_ID}"
-          echo "Token length: ${#GITLAB_TRIGGER_TOKEN}"
-          curl --request POST \
+          curl --fail --request POST \
             --form token="$GITLAB_TRIGGER_TOKEN" \
-            --form "variables[COMMIT_SHA]=${{ github.sha }}" \
-            --form "variables[COMMIT_MSG]=${{ github.event.head_commit.message }}" \
-            --form "variables[DEPLOYED_URL]=$DEPLOYED_URL" \
             "https://gitlab.com/api/v4/projects/$GITLAB_PROJECT_ID/trigger/pipeline?ref=main"
