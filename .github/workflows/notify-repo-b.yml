@@ -14,7 +14,9 @@ jobs:
           GITLAB_PROJECT_ID: ${{ secrets.GITLAB_PROJECT_ID }}
           DEPLOYED_URL: ${{ secrets.DEPLOYED_URL }}
         run: |
-          curl --fail --request POST \
+          echo "Project ID length: ${#GITLAB_PROJECT_ID}"
+          echo "Token length: ${#GITLAB_TRIGGER_TOKEN}"
+          curl --request POST \
             --form token="$GITLAB_TRIGGER_TOKEN" \
             --form "variables[COMMIT_SHA]=${{ github.sha }}" \
             --form "variables[COMMIT_MSG]=${{ github.event.head_commit.message }}" \
