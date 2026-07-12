@@ -1,46 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Demo App</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Demo App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- LOGIN SCREEN -->
-  <section id="login-screen" data-screen="login">
-    <div class="card">
-      <h1>Sign in</h1>
-      <input id="username" type="text" placeholder="Username" data-testid="username-input">
-      <input id="password" type="password" placeholder="Password" data-testid="password-input">
-      <button id="login-btn" data-testid="login-button">Log in</button>
-      <p id="login-error" class="error" hidden>Invalid username or password</p>
-    </div>
-  </section>
+<!-- LOGIN SCREEN -->
+<section id="login-screen" data-screen="login">
+  <div class="card">
+    <h1>Sign in</h1>
+    <input id="username" type="text" placeholder="Username" data-testid="username-input">
+    <input id="password" type="password" placeholder="Password" data-testid="password-input">
+    <button id="login-btn" data-testid="login-button">Log in</button>
+    <p id="login-error" class="error" hidden>Invalid username or password</p>
+  </div>
+</section>
 
-  <!-- HOME SCREEN -->
-  <section id="home-screen" data-screen="home" hidden>
-    <header>
-      <h1>Home</h1>
-      <button id="logout-btn" data-testid="logout-button">Log out</button>
-    </header>
+<!-- HOME SCREEN -->
+<section id="home-screen" data-screen="home" hidden>
+  <header>
+    <h1>Home</h1>
+    <button id="logout-btn" data-testid="logout-button">Log out</button>
+  </header>
 
-<!--    <main id="home-content" data-testid="home-content">-->
-<!--      &lt;!&ndash;-->
-<!--        FEATURE INJECTION POINT-->
-<!--        This is intentionally empty for the baseline demo.-->
-<!--        To add the "search" feature, insert the block from-->
-<!--        feature-search-snippet.html right below this comment,-->
-<!--        then commit + push to main.-->
-<!--      &ndash;&gt;-->
-<!--      <div class="search-bar" data-feature="search" data-testid="search-feature">-->
-<!--        <input type="text" placeholder="Search..." data-testid="search-input">-->
-<!--        <button data-testid="search-button">Search</button>-->
-<!--      </div>-->
+  <main id="home-content" data-testid="home-content">
+    <!--
+      FEATURE INJECTION POINT
+      This is intentionally empty for the baseline demo.
+      To add the "search" feature, insert the block from
+      feature-search-snippet.html right below this comment,
+      then commit + push to main.
+    -->
+  </main>
+</section>
 
-<!--    </main>-->
-  </section>
-
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
